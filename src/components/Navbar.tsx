@@ -6,6 +6,7 @@ import { cn } from '../lib/utils';
 const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
   { name: 'Services', href: '#services' },
   { name: 'Contact', href: '#contact' },
@@ -20,7 +21,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      const sections = ['home', 'about', 'projects', 'services', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'services', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {

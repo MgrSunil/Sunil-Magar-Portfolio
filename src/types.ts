@@ -3,10 +3,11 @@ export interface Project {
   title: string;
   description: string;
   tags: string[];
-  category: "IoT" | "Robotics" | "Safety" | "Featured" | "All";
+  category: "IoT" | "Robotics" | "Safety" | "Featured" | "All" | "Safety & Monitoring" | "Miscellaneous";
   image?: string;
   github?: string;
   demo?: string;
+  components?: string[];
 }
 
 export interface Skill {

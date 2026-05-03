@@ -24,7 +24,7 @@ export default function Skills() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
           {SKILLS.map((category, idx) => (
             <motion.div
               key={category.title}
@@ -32,25 +32,24 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className={cn(
-                "accent-card border-white/5",
-                idx === 1 && "lg:border-x-white/5"
-              )}
+              className="accent-card border-white/5 h-full group"
             >
-              <h3 className="text-sm font-display font-bold text-white uppercase tracking-[0.3em] mb-8 group-hover:text-brand-cyan transition-colors">
+              <h3 className="text-sm font-display font-black text-white uppercase tracking-[0.4em] mb-10 group-hover:text-brand-neon transition-colors">
                 {category.title}
               </h3>
               
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-col gap-3">
                 {category.skills.map((skill) => {
                   const Icon = (LucideIcons as any)[skill.icon] || LucideIcons.Code2;
                   return (
                     <div 
                       key={skill.name}
-                      className="px-4 py-3 bg-white/[0.02] rounded-sm border border-white/5 flex items-center gap-3 hover:bg-white/5 transition-colors group/skill"
+                      className="p-4 bg-white/[0.03] rounded-sm border border-white/5 flex items-center gap-4 hover:bg-brand-neon/10 hover:border-brand-neon/30 hover:translate-x-2 transition-all duration-300 group/skill shadow-lg"
                     >
-                      <Icon size={16} className="text-brand-cyan group-hover/skill:scale-110 transition-transform" />
-                      <span className="text-xs font-medium text-slate-400 group-hover/skill:text-white transition-colors">{skill.name}</span>
+                      <div className="p-2 bg-brand-neon/10 rounded-sm">
+                        <Icon size={20} strokeWidth={3} className="text-brand-neon group-hover/skill:scale-110 transition-transform" />
+                      </div>
+                      <span className="text-xs font-black text-slate-300 group-hover/skill:text-white transition-colors uppercase tracking-widest">{skill.name}</span>
                     </div>
                   );
                 })}

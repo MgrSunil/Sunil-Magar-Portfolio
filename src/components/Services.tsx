@@ -30,7 +30,7 @@ export default function Services() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {SERVICES.map((service, idx) => {
             const Icon = (LucideIcons as any)[service.icon] || LucideIcons.Layers;
             return (
@@ -40,15 +40,15 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="p-8 glass rounded-3xl group hover:bg-brand-neon/5 transition-all flex flex-col items-center text-center border-white/5 hover:border-brand-neon/30"
+                className="p-8 accent-card group hover:bg-brand-neon/5 transition-all flex flex-col items-center text-center border-white/5 hover:border-brand-neon/40 shadow-xl"
               >
-                <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-brand-neon mb-6 group-hover:scale-110 transition-transform group-hover:rotate-6">
-                  <Icon size={32} />
+                <div className="w-16 h-16 rounded-2xl bg-brand-neon/10 border border-brand-neon/30 flex items-center justify-center text-brand-neon mb-8 group-hover:scale-110 transition-transform group-hover:rotate-6 shadow-[0_0_15px_rgba(0,210,255,0.2)] group-hover:shadow-[0_0_25px_rgba(0,210,255,0.4)]">
+                  <Icon size={32} strokeWidth={2.5} />
                 </div>
-                <h3 className="text-xl font-display font-bold text-white mb-4 group-hover:text-brand-neon transition-colors">
+                <h3 className="text-lg font-display font-black text-white mb-4 group-hover:text-brand-neon transition-colors uppercase tracking-tight">
                   {service.title}
                 </h3>
-                <p className="text-slate-400 text-sm italic leading-relaxed">
+                <p className="text-slate-400 text-xs font-medium leading-relaxed">
                   {service.description}
                 </p>
               </motion.div>
