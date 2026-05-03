@@ -12,11 +12,11 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "ecg-monitoring",
-    title: "ECG Monitoring System",
+    title: "ECG signal classification and detection of BPM using 1D CNN",
     description: "A real-time cardiac health tracking system that captures electrical signals from the heart. This project integrates hardware sensing with 1D Convolutional Neural Networks (CNN) for automated anomaly detection, allowing for early warning signs of cardiovascular issues through a portable, low-cost platform.",
     tags: ["Bio-Tech", "Signal Processing", "AI"],
     category: "Featured",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.postimg.cc/mDk7KRLf/ecg.png",
     components: ["Arduino UNO", "ECG Sensor (AD8232)", "Processing Unit", "Python/TensorFlow Dashboard"],
   },
   {
@@ -25,7 +25,7 @@ export const PROJECTS: Project[] = [
     description: "A high-sensitivity seismic activity monitor. Utilizing digital accelerometers, it detects primary and secondary waves of earthquakes to trigger immediate alarms. The system displays intensity levels in real-time, providing crucial seconds for evacuation in tremor-prone areas.",
     tags: ["Safety", "Sensors", "Arduino"],
     category: "Featured",
-    image: "https://opengraph.githubassets.com/1/AyberkOzkan/arduino-earthquake-detector",
+    image: "https://i.postimg.cc/7ZLP3LXR/arduino-based-earthquake-detector.jpg",
     components: ["Arduino UNO", "MPU6050", "LED Display", "I2C Module", "Buzzer"],
   },
   // IoT Projects
