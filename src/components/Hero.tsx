@@ -14,14 +14,15 @@ export default function Hero() {
         
         <motion.div
            initial={{ opacity: 0, scale: 1.2 }}
-           animate={{ opacity: 0.65, scale: 1 }}
-           transition={{ duration: 2, ease: "easeOut" }}
+           animate={{ opacity: 0.6 }}
+           whileInView={{ opacity: 0.65, scale: 1 }}
+           transition={{ duration: 1.5, ease: "easeOut" }}
            className="w-full h-full flex justify-center items-center"
         >
           <img 
-            src="https://i.postimg.cc/Bvtd7ffw/Mr-Sunil-PP-removebg-preview.png" 
+            src="https://i.postimg.cc/KzNx3KC2/Mr-Sunil-PP-removebg-preview.png" 
             alt="Background Portrait"
-            className="h-full w-auto object-contain grayscale brightness-100 contrast-110"
+            className="h-full w-auto object-contain grayscale brightness-100 contrast-110 opacity-70"
           />
         </motion.div>
         
