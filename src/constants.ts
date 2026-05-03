@@ -7,7 +7,7 @@ export const PROJECTS: Project[] = [
     description: "An advanced IoT-based safety system designed to save lives on the road. The helmet detects collision impacts using high-precision motion sensors and automatically transmits the user's GPS coordinates via GSM. Accident prevention is implemented through MQ3 alcohol detection and secondary ignition control of the motorcycle via relay modules.",
     tags: ["IoT", "Safety", "Embedded"],
     category: "Featured",
-    image: "https://i.postimg.cc/Lhwt3WKH/smart-helmet.jpg",
+    image: "https://i.postimg.cc/nzLwTCCZ/smart-helmet.jpg",
     components: ["ESP32", "MPU6050", "GPS Module", "GSM Module", "MQ3 Alcohol Sensor", "Relay Modules", "Pressure Sensor"],
   },
   {
@@ -25,7 +25,7 @@ export const PROJECTS: Project[] = [
     description: "A high-sensitivity seismic activity monitor. Utilizing digital accelerometers, it detects primary and secondary waves of earthquakes to trigger immediate alarms. The system displays intensity levels in real-time, providing crucial seconds for evacuation in tremor-prone areas.",
     tags: ["Safety", "Sensors", "Arduino"],
     category: "Featured",
-    image: "https://i.postimg.cc/3rBdmzYR/arduino-based-earthquake-detector.jpg",
+    image: "https://i.postimg.cc/qBNpv7jT/arduino-based-earthquake-detector.jpg",
     components: ["Arduino UNO", "MPU6050", "LED Display", "I2C Module", "Buzzer"],
   },
   // IoT Projects
