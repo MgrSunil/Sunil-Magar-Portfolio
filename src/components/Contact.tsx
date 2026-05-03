@@ -86,7 +86,7 @@ export default function Contact() {
                   <input 
                     type="text" 
                     placeholder="Enter Name"
-                    className="bg-white/5 border-l-2 border-brand-cyan/20 px-6 py-4 outline-none focus:border-brand-cyan text-white transition-all text-xs font-mono"
+                    className="bg-white/5 border-l-2 border-brand-neon/20 px-6 py-4 outline-none focus:border-brand-neon text-white transition-all text-xs font-mono"
                   />
                 </div>
                 <div className="flex flex-col gap-3">
@@ -94,7 +94,7 @@ export default function Contact() {
                   <input 
                     type="email" 
                     placeholder="name@server.com"
-                    className="bg-white/5 border-l-2 border-brand-cyan/20 px-6 py-4 outline-none focus:border-brand-cyan text-white transition-all text-xs font-mono"
+                    className="bg-white/5 border-l-2 border-brand-neon/20 px-6 py-4 outline-none focus:border-brand-neon text-white transition-all text-xs font-mono"
                   />
                 </div>
               </div>
@@ -104,7 +104,7 @@ export default function Contact() {
                 <textarea 
                   rows={5}
                   placeholder="Awaiting input..."
-                  className="bg-white/5 border-l-2 border-brand-cyan/20 px-6 py-4 outline-none focus:border-brand-cyan text-white transition-all resize-none text-xs font-mono"
+                  className="bg-white/5 border-l-2 border-brand-neon/20 px-6 py-4 outline-none focus:border-brand-neon text-white transition-all resize-none text-xs font-mono"
                 ></textarea>
               </div>
 

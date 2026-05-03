@@ -44,10 +44,10 @@ export default function Skills() {
                   return (
                     <div 
                       key={skill.name}
-                      className="p-4 bg-white/[0.03] rounded-sm border border-white/5 flex items-center gap-4 hover:bg-brand-neon/10 hover:border-brand-neon/30 hover:translate-x-2 transition-all duration-300 group/skill shadow-lg"
+                      className="p-4 bg-white/[0.03] rounded-sm border border-white/5 flex items-center gap-4 hover:bg-brand-neon/10 hover:border-brand-neon hover:translate-x-2 transition-all duration-300 group/skill shadow-[0_0_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_30px_rgba(0,242,255,0.1)]"
                     >
                       <div className="p-2 bg-brand-neon/10 rounded-sm">
-                        <Icon size={20} strokeWidth={3} className="text-brand-neon group-hover/skill:scale-110 transition-transform" />
+                        <Icon size={20} strokeWidth={3} className="text-brand-neon group-hover/skill:scale-110 transition-transform shadow-[0_0_10px_rgba(0,242,255,0.3)]" />
                       </div>
                       <span className="text-xs font-black text-slate-300 group-hover/skill:text-white transition-colors uppercase tracking-widest">{skill.name}</span>
                     </div>

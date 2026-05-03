@@ -9,7 +9,6 @@ const navLinks = [
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
   { name: 'Services', href: '#services' },
-  { name: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
@@ -21,7 +20,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      const sections = ['home', 'about', 'skills', 'projects', 'services', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'services'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -46,10 +45,10 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3 text-2xl font-display font-bold text-white group">
-          <div className="w-8 h-8 bg-brand-neon rounded-sm flex items-center justify-center rotate-45 group-hover:rotate-[225deg] transition-transform duration-500">
+          <div className="w-8 h-8 bg-brand-neon rounded-sm flex items-center justify-center rotate-45 group-hover:rotate-[225deg] transition-transform duration-500 shadow-[0_0_15px_rgba(0,242,255,0.5)]">
             <div className="w-4 h-4 bg-brand-bg -rotate-45"></div>
           </div>
-          <span className="tracking-tighter">SUNIL.</span>
+          <span className="tracking-tighter uppercase font-black italic">Sunil.</span>
         </a>
 
         {/* Desktop Nav */}
@@ -59,7 +58,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               className={cn(
-                "text-[10px] font-bold uppercase tracking-[0.2em] transition-colors hover:text-white",
+                "text-[10px] font-black uppercase tracking-[0.3em] transition-all hover:text-brand-neon",
                 activeSection === link.href.slice(1) ? "text-brand-neon" : "text-slate-400"
               )}
             >
@@ -68,7 +67,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contact"
-            className="px-6 py-2 border border-brand-neon/30 rounded-full text-[10px] font-bold uppercase tracking-widest text-white hover:bg-brand-neon hover:text-brand-bg transition-all"
+            className="px-6 py-2 border-2 border-brand-neon text-[10px] font-black uppercase tracking-widest text-brand-neon hover:bg-brand-neon hover:text-brand-bg transition-all shadow-[inset_0_0_10px_rgba(0,242,255,0.1)] hover:shadow-[0_0_20px_rgba(0,242,255,0.4)]"
           >
             Contact
           </a>
@@ -108,7 +107,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="w-full py-4 bg-brand-neon text-black text-center font-bold rounded-2xl"
+              className="btn-primary w-full text-center"
             >
               Contact Me
             </a>

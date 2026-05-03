@@ -35,8 +35,8 @@ export default function Hero() {
           <circle cx="50%" cy="50%" r="400" fill="url(#grad1)" opacity="0.1" />
           <defs>
             <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-              <stop offset="0%" style={{ stopColor: '#00d2ff', stopOpacity: 1 }} />
-              <stop offset="100%" style={{ stopColor: '#05060a', stopOpacity: 0 }} />
+              <stop offset="0%" style={{ stopColor: '#00f2ff', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#020306', stopOpacity: 0 }} />
             </radialGradient>
           </defs>
         </svg>
@@ -53,7 +53,7 @@ export default function Hero() {
             className="flex flex-col gap-4"
           >
             <div className="flex items-center gap-2 px-3 py-1 bg-brand-neon/10 border border-brand-neon/20 rounded-full w-fit backdrop-blur-sm">
-              <span className="w-1.5 h-1.5 bg-brand-neon rounded-full animate-pulse shadow-[0_0_8px_#00d2ff]" />
+              <span className="w-1.5 h-1.5 bg-brand-neon rounded-full animate-pulse shadow-[0_0_8px_#00f2ff]" />
               <span className="text-[10px] font-black uppercase tracking-widest text-brand-neon">Available for Projects & Training</span>
             </div>
             
@@ -76,7 +76,7 @@ export default function Hero() {
               View Projects
             </button>
             <button 
-              className="btn-outline"
+              className="btn-neon"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Contact Me
@@ -99,7 +99,7 @@ export default function Hero() {
                    initial={{ width: 0 }}
                    animate={{ width: "100%" }}
                    transition={{ duration: 1.5, delay: 1 }}
-                   className="h-full bg-brand-neon shadow-[0_0_15px_#00d2ff]" 
+                   className="h-full bg-brand-neon shadow-[0_0_15px_#00f2ff]" 
                 />
               </div>
             </div>

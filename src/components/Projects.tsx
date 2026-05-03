@@ -128,7 +128,7 @@ export default function Projects() {
                     onClick={() => setCurrentIndex(idx)}
                     className={cn(
                       "w-12 h-1 transition-all duration-500",
-                      currentIndex === idx ? "bg-brand-neon w-20" : "bg-white/10"
+                      currentIndex === idx ? "bg-brand-neon w-20 shadow-[0_0_10px_#00f2ff]" : "bg-white/10"
                     )}
                   />
                 ))}
@@ -153,8 +153,8 @@ export default function Projects() {
                    className={cn(
                      "px-8 py-4 rounded-sm text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 border",
                      activeOtherCategory === category 
-                      ? "bg-brand-neon text-brand-bg border-brand-neon shadow-[0_0_20px_rgba(0,210,255,0.4)] scale-105" 
-                      : "bg-white/[0.03] text-slate-400 border-white/5 hover:border-brand-neon/50 hover:text-white"
+                      ? "bg-brand-neon text-brand-bg border-brand-neon shadow-[0_0_30px_rgba(0,242,255,0.4)] scale-105" 
+                      : "bg-white/[0.03] text-slate-400 border-white/5 hover:border-brand-neon hover:text-white"
                    )}
                  >
                    {category}
@@ -173,11 +173,11 @@ export default function Projects() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ delay: idx * 0.05 }}
                   key={project.id}
-                  className="accent-card border-white/5 hover:border-brand-neon/30 transition-all duration-500 group"
+                  className="accent-card border-white/5 hover:border-brand-neon hover:shadow-[0_0_30px_rgba(0,242,255,0.05)] transition-all duration-500 group"
                 >
                    <div className="flex flex-col h-full gap-6">
                       <div className="flex justify-between items-start">
-                         <span className="text-[10px] font-mono text-brand-neon/60 uppercase tracking-widest">{project.category}</span>
+                         <span className="text-[10px] font-mono text-brand-neon uppercase tracking-widest">{project.category}</span>
                          <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                             <Github size={14} className="text-slate-500 hover:text-brand-neon cursor-pointer" />
                             <ExternalLink size={14} className="text-slate-500 hover:text-brand-neon cursor-pointer" />
@@ -194,7 +194,7 @@ export default function Projects() {
                       
                       <div className="mt-auto flex flex-wrap gap-2 pt-4 border-t border-white/5">
                          {project.tags.map(tag => (
-                           <span key={tag} className="text-[8px] font-black uppercase tracking-tighter text-slate-500">
+                           <span key={tag} className="text-[8px] font-black uppercase tracking-tighter text-brand-neon/50">
                              #{tag}
                            </span>
                          ))}
@@ -212,7 +212,7 @@ export default function Projects() {
           viewport={{ once: true }}
           className="mt-32 p-12 border border-white/5 bg-white/[0.01] hover:bg-white/[0.02] transition-colors relative group"
         >
-          <div className="absolute top-0 left-0 w-2 h-full bg-brand-neon" />
+          <div className="absolute top-0 left-0 w-2 h-full bg-brand-neon shadow-[0_0_15px_#00f2ff]" />
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-left">
               <h4 className="text-2xl font-display font-bold text-white mb-2">Technical Problem Solving</h4>
@@ -223,7 +223,7 @@ export default function Projects() {
             </div>
             <a 
               href="#contact" 
-              className="px-10 py-5 bg-white/5 border border-white/10 hover:bg-brand-neon hover:text-brand-bg hover:border-brand-neon transition-all duration-300 font-black text-xs uppercase tracking-[0.2em] flex items-center gap-3 whitespace-nowrap"
+              className="btn-primary"
             >
               Solve a Problem <ArrowRight size={16} />
             </a>

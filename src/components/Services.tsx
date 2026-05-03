@@ -36,13 +36,13 @@ export default function Services() {
             return (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="p-8 accent-card group hover:bg-brand-neon/5 transition-all flex flex-col items-center text-center border-white/5 hover:border-brand-neon/40 shadow-xl"
+                className="p-8 accent-card group hover:bg-brand-neon/5 transition-all flex flex-col items-center text-center border-white/5 hover:border-brand-neon hover:shadow-[0_0_30px_rgba(0,242,255,0.1)]"
               >
-                <div className="w-16 h-16 rounded-2xl bg-brand-neon/10 border border-brand-neon/30 flex items-center justify-center text-brand-neon mb-8 group-hover:scale-110 transition-transform group-hover:rotate-6 shadow-[0_0_15px_rgba(0,210,255,0.2)] group-hover:shadow-[0_0_25px_rgba(0,210,255,0.4)]">
+                <div className="w-16 h-16 rounded-2xl bg-brand-neon/10 border border-brand-neon/30 flex items-center justify-center text-brand-neon mb-8 group-hover:scale-110 transition-transform group-hover:rotate-6 shadow-[0_0_15px_rgba(0,242,255,0.2)] group-hover:shadow-[0_0_25px_rgba(0,242,255,0.4)]">
                   <Icon size={32} strokeWidth={2.5} />
                 </div>
                 <h3 className="text-lg font-display font-black text-white mb-4 group-hover:text-brand-neon transition-colors uppercase tracking-tight">

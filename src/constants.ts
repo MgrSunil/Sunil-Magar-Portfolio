@@ -25,7 +25,7 @@ export const PROJECTS: Project[] = [
     description: "A high-sensitivity seismic activity monitor. Utilizing digital accelerometers, it detects primary and secondary waves of earthquakes to trigger immediate alarms. The system displays intensity levels in real-time, providing crucial seconds for evacuation in tremor-prone areas.",
     tags: ["Safety", "Sensors", "Arduino"],
     category: "Featured",
-    image: "https://i.postimg.cc/7ZLP3LXR/arduino-based-earthquake-detector.jpg",
+    image: "https://i.postimg.cc/3rBdmzYR/arduino-based-earthquake-detector.jpg",
     components: ["Arduino UNO", "MPU6050", "LED Display", "I2C Module", "Buzzer"],
   },
   // IoT Projects

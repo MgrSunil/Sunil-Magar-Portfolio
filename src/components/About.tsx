@@ -24,20 +24,20 @@ export default function About() {
             className="lg:col-span-5 hidden lg:block"
           >
             {/* Decorative Element replacing the portrait */}
-            <div className="p-12 accent-card border-none bg-white/[0.03] backdrop-blur-sm relative">
+            <div className="p-12 accent-card border-none bg-white/[0.03] backdrop-blur-sm relative overflow-visible">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-neon to-transparent" />
               <div className="flex flex-col gap-6">
-                 <div className="text-[120px] font-display font-black text-white/5 leading-none select-none">01</div>
+                 <div className="text-[120px] font-display font-black text-white/[0.03] leading-none select-none">01</div>
                  <div className="font-mono text-[10px] text-brand-neon uppercase tracking-[0.5em] font-black">Core Architecture</div>
                  <div className="space-y-4">
-                    <div className="h-1 shadow-[0_0_10px_#00d2ff] w-1/3 bg-brand-neon" />
+                    <div className="h-1 shadow-[0_0_15px_#00f2ff] w-1/3 bg-brand-neon" />
                     <div className="h-0.5 w-full bg-white/5" />
                     <div className="h-0.5 w-2/3 bg-white/5" />
                  </div>
               </div>
               
               {/* Circuit line graphic */}
-              <svg className="absolute bottom-10 right-10 w-32 h-32 text-brand-neon/20" viewBox="0 0 100 100">
+              <svg className="absolute bottom-10 right-10 w-32 h-32 text-brand-neon/10" viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 4" />
                 <path d="M50 5 L50 95 M5 50 L95 50" stroke="currentColor" strokeWidth="0.5" />
                 <rect x="40" y="40" width="20" height="20" fill="currentColor" opacity="0.2" />
@@ -98,9 +98,9 @@ export default function About() {
                 { icon: Globe, title: "IoT Solutions", desc: "Connected smart devices" },
                 { icon: CircuitBoard, title: "PCB Design", desc: "Schematic to fabrication" }
               ].map((item, i) => (
-                <div key={i} className="p-6 accent-card group">
+                <div key={i} className="p-6 accent-card group hover:border-brand-neon hover:shadow-[0_0_30px_rgba(0,242,255,0.1)] transition-all">
                   <div className="flex gap-6 items-start">
-                    <div className="w-10 h-10 bg-white/5 rounded-sm flex items-center justify-center text-brand-neon group-hover:scale-110 transition-transform">
+                    <div className="w-10 h-10 bg-brand-neon/10 rounded-sm flex items-center justify-center text-brand-neon group-hover:scale-110 transition-transform shadow-[0_0_10px_rgba(0,242,255,0.2)]">
                       <item.icon size={20} />
                     </div>
                     <div>
