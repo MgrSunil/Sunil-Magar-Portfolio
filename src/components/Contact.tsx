@@ -1,7 +1,34 @@
+import React, { useRef, useState } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Github, Linkedin, Send, Facebook, MessageCircle, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Send, Facebook, MessageCircle, Instagram, CheckCircle2, XCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+
+const SERVICE_ID = (import.meta as any).env.VITE_EMAILJS_SERVICE_ID || 'service_e015xya';
+const TEMPLATE_ID = (import.meta as any).env.VITE_EMAILJS_TEMPLATE_ID || 'template_p5xb0qd';
+const PUBLIC_KEY = (import.meta as any).env.VITE_EMAILJS_PUBLIC_KEY || 'd8kbHb21M5sJ4W4j7';
 
 export default function Contact() {
+  const form = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.current) return;
+
+    setStatus('sending');
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+      .then(() => {
+        setStatus('success');
+        form.current?.reset();
+        setTimeout(() => setStatus('idle'), 5000);
+      }, (error) => {
+        console.error('EmailJS Error:', error);
+        setStatus('error');
+        setTimeout(() => setStatus('idle'), 5000);
+      });
+  };
+
   return (
     <section id="contact" className="py-32 relative overflow-hidden bg-brand-bg">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20">
@@ -79,21 +106,25 @@ export default function Contact() {
           className="p-1 glass rounded-sm"
         >
           <div className="p-10 bg-brand-bg/80 h-full flex flex-col gap-8">
-            <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
+            <form ref={form} className="flex flex-col gap-6" onSubmit={sendEmail}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-3">
                   <label className="text-[10px] uppercase tracking-widest font-black text-slate-500 ml-1">Identity</label>
                   <input 
+                    name="from_name"
                     type="text" 
                     placeholder="Enter Name"
+                    required
                     className="bg-white/5 border-l-2 border-brand-neon/20 px-6 py-4 outline-none focus:border-brand-neon text-white transition-all text-xs font-mono"
                   />
                 </div>
                 <div className="flex flex-col gap-3">
                   <label className="text-[10px] uppercase tracking-widest font-black text-slate-500 ml-1">Protocol (Email)</label>
                   <input 
+                    name="user_email"
                     type="email" 
                     placeholder="name@server.com"
+                    required
                     className="bg-white/5 border-l-2 border-brand-neon/20 px-6 py-4 outline-none focus:border-brand-neon text-white transition-all text-xs font-mono"
                   />
                 </div>
@@ -102,14 +133,23 @@ export default function Contact() {
               <div className="flex flex-col gap-3">
                 <label className="text-[10px] uppercase tracking-widest font-black text-slate-500 ml-1">Input Stream (Message)</label>
                 <textarea 
+                  name="message"
                   rows={5}
                   placeholder="Awaiting input..."
+                  required
                   className="bg-white/5 border-l-2 border-brand-neon/20 px-6 py-4 outline-none focus:border-brand-neon text-white transition-all resize-none text-xs font-mono"
                 ></textarea>
               </div>
 
-              <button className="btn-primary flex items-center justify-center gap-4">
-                Execute Transmission <Send size={16} />
+              <button 
+                type="submit" 
+                disabled={status === 'sending'}
+                className="btn-primary flex items-center justify-center gap-4 disabled:opacity-50 disabled:cursor-not-allowed min-h-[56px]"
+              >
+                {status === 'idle' && <>Execute Transmission <Send size={16} /></>}
+                {status === 'sending' && <>Encrypting... <div className="w-4 h-4 border-2 border-brand-bg border-t-transparent rounded-full animate-spin" /></>}
+                {status === 'success' && <>Transmission Success <CheckCircle2 size={16} className="text-brand-bg" /></>}
+                {status === 'error' && <>Transmission Failed <XCircle size={16} /></>}
               </button>
             </form>
           </div>
@@ -119,3 +159,4 @@ export default function Contact() {
     </section>
   );
 }
+

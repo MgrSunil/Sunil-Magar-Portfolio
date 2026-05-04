@@ -258,10 +258,4 @@ export const EXPERIENCE: Experience[] = [
     period: "2023",
     description: "Organized and led hands-on workshops for microcontroller programming.",
   },
-  {
-    role: "Member",
-    company: "Cosmos Robotics Club",
-    period: "Ongoing",
-    description: "Collaborating on innovative club projects and competitions.",
-  },
 ];
